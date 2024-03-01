@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 interface ShowData {
     name: string;
@@ -32,6 +33,7 @@ const ShowDetails = () => {
     }
 
     return (
+        <>
         <div className="detailsContainer">
             <div className="detailsImg">
                 <img src={showData.image.original} alt={showData.name} />
@@ -40,7 +42,10 @@ const ShowDetails = () => {
                 <h1>{showData.name}</h1>
                 <p dangerouslySetInnerHTML={{ __html: showData.summary }} />
             </div>
+
         </div>
+            <NavLink to="/"><strong>Back</strong></NavLink>
+        </>
     );
 };
 
