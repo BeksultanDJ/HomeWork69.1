@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import SearchPage from "./SearchPage.tsx";
 
 interface ShowData {
     name: string;
@@ -34,6 +35,7 @@ const ShowDetails = () => {
 
     return (
         <>
+            <SearchPage/>
         <div className="detailsContainer">
             <div className="detailsImg">
                 <img src={showData.image.original} alt={showData.name} />
